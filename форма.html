@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Форма опроса</title>
+    <style>
+      /* Style the form */
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+      }
+      
+      /* Style the form elements */
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      
+      input[type="text"],
+      input[type="number"],
+      input[type="email"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      
+      /* Style the submit button */
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      /* Style the form header */
+      h1, p {
+        text-align: center;
+      }
+      
+      /* Style the form title */
+      .form-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      
+      /* Style the form description */
+      .form-description {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+      
+      /* Style the form fields */
+      .form-field {
+        margin-bottom: 30px;
+      }
+      
+      /* Style the form error message */
+      .form-error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add the survey form -->
+    <form action="#" method="post">
+      <!-- Add the form title -->
+      <h1 class="form-title">Форма опроса</h1>
+      
+      <!-- Add the form description -->
+      <p class="form-description">Пожалуйста, заполните эту анкету.</p>
+      
+      <!-- Add the form fields -->
+      <div class="form-field">
+        <label for="name">Имя *</label>
+        <input type="text" id="name" name="Имя" required>
+        <div class="form-error">Введите Ваше имя.</div>
+      </div>
+      
+      <div class="form-field">
+        <label for="age">Возраст *</label>
+        <input type="number" id="age" name="Возраст" required>
+        <div class="form-error">Введите Ваш возраст.</div>
+      </div>
+      
+      <div class="form-field">
+       
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+        <div class="form-error">Введите ваш email .</div>
+      </div>
+      
+      <div class="form-field">
+        <label for="пол">Пол *</label>
+        <div>
+          <input type="radio" id="мужской" name="Пол" value="мужской" required>
+          <label for="мужской">Мужской</label>
+        </div>
+        <div>
+          <input type="radio" id="женский" name="пол" value="женский">
+          <label for="женский">Женский</label>
+        </div>
+        <div class="form-error">Введите  Ваш пол.</div>
+      </div>
+      
+      <div class="form-field">
+        <label for="Хобби">Хобби *</label>
+        <select id="Хобби" name="Хобби" required>
+          <option value="" selected disabled>Выберите из списка</option>
+          <option value="спорт">спорт</option>
+          <option value="искусство">искусство</option>
+          <option value="чтение">чтение</option>
+        </select>
+        <div class="form-error">Введите Ваше хобби.</div>
+      </div>
+      
+      <div class="form-field">
+        <label for="Обратная связь">Обратная связь *</label>
+        <textarea id="Обратная связь" name="Обратная связь" rows="5" required></textarea>
+        <div class="form-error">Введите ваши дополнительные сведения.</div>
+      </div>
+      
+      <div class="form-field">
+        <input type="checkbox" id="subscribe" name="subscribe" value="subscribe">
+        <label for="subscribe">Подписаться на наши новости</label>
+      </div>
+      
+      <!-- Add the submit button -->
+      <div class="form-field">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </body>
+</html>

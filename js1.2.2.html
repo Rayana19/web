@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Counting from 1 to 10</title>
+</head>
+<body>
+
+	<h1>Counting from 1 to 10:</h1>
+
+	<p id="count"></p>
+
+	<script>
+		var count = 1;
+		var displayCount = function() {
+			document.getElementById("count").innerHTML = count;
+			count++;
+			if (count > 10) clearInterval(counter);
+		};
+		var counter = setInterval(displayCount, 1000);
+	</script>
+
+</body>
+</html>

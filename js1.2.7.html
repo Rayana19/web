@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess the Number</title>
+</head>
+<body>
+
+	<h1>Guess the Number</h1>
+
+	<p>Can you guess the number between 1 and 100?</p>
+
+	<button onclick="playGame()">Start Game</button>
+
+	<p id="output"></p>
+
+	<script>
+		function playGame() {
+			var randomNumber = Math.floor(Math.random() * 100) + 1;
+			var userInput;
+			do {
+				userInput = parseInt(prompt("Guess a number between 1 and 100:"));
+				if (userInput === randomNumber) {
+					document.getElementById("output").innerHTML = "Congratulations! You guessed the number " + randomNumber + "!";
+					return;
+				} else if (userInput < randomNumber) {
+					alert("Too low! Try again.");
+				} else {
+					alert("Too high! Try again.");
+				}
+			} while (true);
+		}
+	</script>
+
+</body>
+</html>

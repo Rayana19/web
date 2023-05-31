@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime Number Generator</title>
+</head>
+<body>
+
+	<h1>Prime Number Generator</h1>
+
+	<p>Enter a number to generate all prime numbers up to it:</p>
+
+	<input type="number" id="input" />
+
+	<button onclick="generatePrimes()">Generate</button>
+
+	<p id="output"></p>
+
+	<script>
+		function isPrime(num) {
+			if (num < 2) return false;
+			for (var i = 2; i <= Math.sqrt(num); i++) {
+				if (num % i === 0) return false;
+			}
+			return true;
+		}
+
+		function generatePrimes() {
+			var maxNum = document.getElementById("input").value;
+			var primes = [];
+
+			for (var i = 2; i <= maxNum; i++) {
+				if (isPrime(i)) {
+					primes.push(i);
+				}
+			}
+
+			document.getElementById("output").innerHTML = "The prime numbers up to " + maxNum + " are: " + primes.join(", ");
+		}
+	</script>
+
+</body>
+</html>

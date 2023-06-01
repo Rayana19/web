@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Empty Arrow Function</title>
+	<script>
+		const emptyArrowFunction = () => {
+		}
+
+		window.onload = () => {
+
+			const resultElm = document.getElementById("result");
+			resultElm.innerHTML = `The result is ${emptyArrowFunction()}.`;
+		};
+	</script>
+</head>
+<body>
+	<h1>Empty Arrow Function</h1>
+	<p id="result">Result will be displayed here.</p>
+</body>
+</html>

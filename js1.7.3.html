@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Palindrome Checker</title>
+  </head>
+  <body>
+    <h1>Palindrome Checker</h1>
+
+    <label for="lastname-input">Enter your last name:</label>
+    <input type="text" id="lastname-input" />
+    <button onclick="checkPalindrome()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+      const checkPalindrome = () => {
+        const lastname = document.getElementById("lastname-input").value.toLowerCase();
+        const reversedLastname = lastname.split("").reverse().join("");
+
+        if (lastname === reversedLastname) {
+          document.getElementById("result").textContent = `${lastname} is a palindrome!`;
+        } else {
+          document.getElementById("result").textContent = `${lastname} is not a palindrome.`;
+        }
+      };
+    </script>
+  </body>
+</html>

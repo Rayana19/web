@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Days Until New Year</title>
+	<script>
+		const daysUntilNewYear = () => {
+			const now = new Date();
+			const currentYear = now.getFullYear();
+			const newYear = new Date(currentYear + 1, 0, 1);
+			const diffInMs = newYear.getTime() - now.getTime();
+			const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+			return diffInDays;
+		}
+
+		window.onload = () => {
+			const daysLeft = daysUntilNewYear();
+			const resultElm = document.getElementById("result");
+			resultElm.innerHTML = `There are ${daysLeft} days until the next new year.`;
+		};
+	</script>
+</head>
+<body>
+	<h1>Days Until New Year</h1>
+	<p id="result">Result will be displayed here.</p>
+</body>
+</html>

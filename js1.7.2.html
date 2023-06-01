@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function Expression Test</title>
+</head>
+<body>
+	<h1>Function Expression Test</h1>
+	<p id="output"></p>
+
+	<script>
+		const isEven = function(num) {
+			return num % 2 === 0;
+		};
+
+		const isVowel = function(char) {
+			char = char.toLowerCase();
+			return char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u';
+		};
+
+		const add = function(a, b) {
+			return a + b;
+		};
+
+		const subtract = function(a, b) {
+			return a - b;
+		};
+
+		const multiply = function(a, b) {
+			return a * b;
+		};
+
+		const divide = function(a, b) {
+			if (b === 0) {
+				throw new Error('Cannot divide by zero!');
+			}
+			return a / b;
+		};
+
+		// Select the output element
+		const outputElement = document.querySelector("#output");
+
+		// Update the contents of the output element with the test results
+		outputElement.textContent += "isEven(4) returns: " + isEven(4) + "\n";
+		outputElement.textContent += "isEven(3) returns: " + isEven(3) + "\n";
+		outputElement.textContent += "isVowel('A') returns: " + isVowel('A') + "\n";
+		outputElement.textContent += "isVowel('B') returns: " + isVowel('B') + "\n";
+		outputElement.textContent += "add(2, 3) returns: " + add(2, 3) + "\n";
+		outputElement.textContent += "subtract(7, 5) returns: " + subtract(7, 5) + "\n";
+		outputElement.textContent += "multiply(4, 6) returns: " + multiply(4, 6) + "\n";
+		outputElement.textContent += "divide(9, 3) returns: " + divide(9, 3) + "\n";
+
+		try {
+			// Attempt to divide by zero (will throw an error)
+			divide(10, 0);
+		} catch(error) {
+			// Update the contents of the output element with the error message
+			outputElement.textContent += error.message;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        font-family: Arial;
+        font-size: 16px;
+      }
+      label {
+        margin-bottom: 10px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 300px;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      .error-message {
+        color: red;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="login-form">
+      <label for="nickname">Nickname:</label>
+      <input type="text" id="nickname" name="nickname" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+
+      <input type="submit" value="Login">
+    </form>
+
+    <script>
+      const loginForm = document.getElementById("login-form");
+      const nicknameInput = document.getElementById("nickname")
+      const passwordInput = document.getElementById("password");
+      const confirmPasswordInput = document.getElementById("confirm-password");
+      const errorMessage = document.createElement("div");
+      errorMessage.classList.add("error-message");
+
+      loginForm.addEventListener("submit", (event) => {
+        // prevent the default form submission behavior
+        event.preventDefault();
+
+        // check if the passwords match
+        if (passwordInput.value !== confirmPasswordInput.value) {
+          if (!errorMessage.textContent) {
+            errorMessage.textContent = "Passwords do not match!";
+            loginForm.appendChild(errorMessage);
+          }
+        } else {
+          // store the login data in localStorage
+          localStorage.setItem("nickname", nicknameInput.value);
+          localStorage.setItem("password", passwordInput.value);
+
+          // redirect to home page or display success message
+          alert("Login successful!");
+        }
+      });
+    </script>
+  </body>
+</html>

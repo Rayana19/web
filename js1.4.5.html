@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Student Page</title>
+</head>
+
+<body>
+
+    <script>
+
+        function User(name) {
+            this.name = name;
+
+            this.sayHi = function () {
+                alert("Меня зовут: " + this.name);
+            };
+        }
+
+        let vasya = new User("Вася");
+
+        vasya.sayHi();
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Filter</title>
+	<script>
+		window.onload = () => {
+			const emails = [
+				"john@example.com",
+				"jane@example.com",
+				"bob@example.com",
+				"alice@example.com",
+				"dave@example.com"
+			];
+
+			// This function filters the array by email name
+			const filterByEmail = (arr, name) => arr.filter(email => email.includes(name));
+
+			// Add an event listener to the button to update the filter when clicked
+			document.getElementById("filter-btn").addEventListener("click", () => {
+				const name = document.getElementById("name-input").value;
+				const filteredEmails = filterByEmail(emails, name);
+
+				// Output the filtered email list to the page
+				const resultElm = document.getElementById("email-list");
+				resultElm.innerHTML = "";
+				filteredEmails.forEach(email => {
+					const li = document.createElement("li");
+					li.textContent = email;
+					resultElm.appendChild(li);
+				});
+			});
+		};
+	</script>
+</head>
+<body>
+	<h1>Email Filter</h1>
+
+	<!-- Input field and button for filtering -->
+	<label for="name-input">Filter by name:</label>
+	<input type="text" id="name-input">
+	<button id="filter-btn">Filter</button>
+
+	<!-- Display the results here -->
+	<ul id="email-list">
+		<li>john@example.com</li>
+		<li>jane@example.com</li>
+		<li>bob@example.com</li>
+		<li>alice@example.com</li>
+		<li>dave@example.com</li>
+	</ul>
+</body>
+</html>

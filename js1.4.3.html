@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Object Example with Condition</title>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <ul id="userList"></ul>
+    
+    <h1>Orders</h1>
+    <ul id="orderList"></ul>
+    
+    <h1>Restaurants</h1>
+    <ul id="restaurantList"></ul>
+    
+    <script>
+      // Create the users object with two user objects in an array
+      const users = {
+        userList: [
+          {id: 1, name: "Rayan Shakh", email: "shakh.rayan@mail.ru"},
+          {id: 2, name: "Ivan Orlov", email: "orlovivan@mail.ru"}
+        ]
+      };
+      
+      // Create the orders object with two order objects in an array
+      const orders = {
+        orderList: [
+          {id: 1, userId: 1, restaurantId: 1, status: "Delivered"},
+          {id: 2, userId: 2, restaurantId: 2, status: "Pending"}
+        ]
+      };
+      
+      // Create the restaurants object with two restaurant objects in an array
+      const restaurants = {
+        restaurantList: [
+          {id: 1, name: "Pizza Palace", address: "123 Main St."},
+          {id: 2, name: "Burger Barn", address: "456 Oak Ave."}
+        ]
+      };
+      
+      // Output user names and corresponding order status for delivered orders
+      const userList = document.getElementById("userList");
+      orders.orderList.forEach(order => {
+        if (order.status === "Delivered") {
+          const user = users.userList.find(user => user.id === order.userId);
+          const restaurant = restaurants.restaurantList.find(restaurant => restaurant.id === order.restaurantId);
+          userList.innerHTML += `<li>${user.name} - ${restaurant.name} (${order.status})</li>`;
+        }
+      });
+      
+      // Output restaurant names and corresponding order status for pending orders
+      const restaurantList = document.getElementById("restaurantList");
+      orders.orderList.forEach(order => {
+        if (order.status === "Pending") {
+          const restaurant = restaurants.restaurantList.find(restaurant => restaurant.id === order.restaurantId);
+          restaurantList.innerHTML += `<li>${restaurant.name} - Order #${order.id} (${order.status})</li>`;
+        }
+      });
+      
+      // Output all orders with their corresponding user and restaurant information
+      const orderList = document.getElementById("orderList");
+      orders.orderList.forEach(order => {
+        const user = users.userList.find(user => user.id === order.userId);
+        const restaurant = restaurants.restaurantList.find(restaurant => restaurant.id === order.restaurantId);
+        orderList.innerHTML += `<li>Order #${order.id} - ${user.name} at ${restaurant.name} (${order.status})</li>`;
+      });
+    </script>
+  </body>
+</html>

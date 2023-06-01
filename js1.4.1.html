@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Anonymous Object Example</title>
+  </head>
+  <body>
+    <script>
+      // Create an anonymous object with name and age fields
+      const person = {
+        name: "Rayana",
+        age: 20,
+      };
+      
+      // Add a sayHi() function to the object
+      person.sayHi = function() {
+        alert(`Hi, my name is ${this.name} and I'm ${this.age} years old.`);
+      };
+      
+      // Call the sayHi() function on the object
+      person.sayHi();
+    </script>
+  </body>
+</html>

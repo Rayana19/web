@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Check</title>
+</head>
+
+<body>
+    <div id="result"></div>
+
+    <script>
+        const users = [
+            { name: 'Alice', isAdmin: true },
+            { name: 'Bob', isAdmin: false },
+            { name: 'Charlie', isAdmin: true },
+            { name: 'Dave', isAdmin: false },
+        ];
+
+        const admins = users.filter(user => user.isAdmin);
+        const resultDiv = document.getElementById('result');
+        if (admins.length > 0) {
+            const adminNames = admins.map(admin => admin.name).join(', ');
+            resultDiv.innerHTML = `The admins are: ${adminNames}`;
+        } else {
+            resultDiv.innerHTML = 'No admins found';
+        }
+    </script>
+</body>
+
+</html>

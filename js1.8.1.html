@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array mapping</title>
+</head>
+
+<body>
+    <h1>Array mapping</h1>
+    <p id="original-array"></p>
+    <p id="modified-array"></p>
+
+    <script>
+        // Create the year of birth array
+        const originalArray = [1, 2, 3, 4, 5];
+
+        const modifiedArray = originalArray.map(n => (n + 10) * 3);
+
+        // Display the original and modified arrays on the page
+        const originalArrayElement = document.getElementById("original-array");
+        const modifiedArrayElement = document.getElementById("modified-array");
+
+        originalArrayElement.innerText = `Original array: ${originalArray}`;
+        modifiedArrayElement.innerText = `Modified array (age): ${modifiedArray}`;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>String Lengths</title>
+  </head>
+  <body>
+    <h1>String Lengths</h1>
+
+    <!-- <ul id="original">
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>PHP</li>
+      <li>Java</li>
+      <li>C</li>
+    </ul> -->
+
+    <div id="result"></div>
+
+    <script>
+      const strArray = ['JavaScript', 'Python', 'PHP', 'Java', 'C'];
+      
+      // Define our custom higher-order function
+      function mapForEach(arr, fn) {
+        const newArray = [];
+        for(let i = 0; i < arr.length; i++) {
+          newArray.push(
+            fn(arr[i])
+          );
+        }
+        return newArray;
+      }
+      
+      // Use our custom function to get an array of string lengths
+      const lenArray = mapForEach(strArray, function(item) {
+        return item.length;
+      });
+      
+      // Create a new array with zeros and ones based on string length
+      const binaryArray = mapForEach(lenArray, function(item) {
+        if (item <= 3) {
+          return 0;
+        } else {
+          return 1;
+        }
+      });
+      
+      // Output the result to the page
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `<p>Original Array: ${strArray}</p><p>Binary Array: ${binaryArray}</p>`;
+    </script>
+  </body>
+</html>

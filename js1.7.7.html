@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Manipulation with Arrow Functions</title>
+	<script>
+		window.onload = () => {
+			const arr = [1, 2, 3, 4, 5];
+
+			// The "sumAll" function uses the reduce method to sum all elements in the array.
+			const sumAll = arr => arr.reduce((acc, curr) => acc + curr);
+
+			// The "evenNumbers" function uses the filter method to identify all even elements in the array.
+			const evenNumbers = arr => arr.filter(num => num % 2 === 0);
+
+			// The "doubleValues" function uses the map method to multiply each element by 2.
+			const doubleValues = arr => arr.map(num => num * 2);
+
+			// Output the results to the page
+			document.getElementById("sum").textContent = `Sum of all elements: ${sumAll(arr)}`;
+			document.getElementById("even").textContent = `Even numbers in array: ${evenNumbers(arr)}`;
+			document.getElementById("double").textContent = `Double values in array: ${doubleValues(arr)}`;
+		};
+	</script>
+</head>
+<body>
+	<h1>Array Manipulation with Arrow Functions</h1>
+
+	<!-- Display the results here -->
+	<p id="sum"></p>
+	<p id="even"></p>
+	<p id="double"></p>
+</body>
+</html>

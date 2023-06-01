@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Scores</title>
+  </head>
+  <body>
+    <h1>Student Scores</h1>
+
+    <table id="scores">
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Alice</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Bob</td>
+        <td>72</td>
+      </tr>
+      <tr>
+        <td>Charlie</td>
+        <td>90</td>
+      </tr>
+    </table>
+
+    <div id="result"></div>
+
+    <script>
+      const scoresTable = document.getElementById('scores');
+      const scoreCells = Array.from(scoresTable.querySelectorAll('td:nth-child(2)'));
+      const scores = scoreCells.map(cell => Number(cell.innerText));
+      const sum = scores.reduce((accumulator, currentValue) => accumulator + currentValue);
+      const average = sum / scores.length;
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `The average score is: ${average.toFixed(2)}`;
+    </script>
+  </body>
+</html>

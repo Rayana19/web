@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Year of Birth to Age Mapping</title>
+  </head>
+  <body>
+    <h1>Year of Birth to Age Mapping</h1>
+    <p id="original-array"></p>
+    <p id="modified-array"></p>
+
+    <script>
+      // Create the year of birth array
+      const yearOfBirth = [1990, 1985, 2000, 1978, 1995];
+
+      // Map the year of birth array to their age
+      const currentYear = new Date().getFullYear();
+      const age = yearOfBirth.map(year => currentYear - year);
+
+      // Display the original and modified arrays on the page
+      const originalArrayElement = document.getElementById("original-array");
+      const modifiedArrayElement = document.getElementById("modified-array");
+
+      originalArrayElement.innerText = `Original array: ${yearOfBirth}`;
+      modifiedArrayElement.innerText = `Modified array (age): ${age}`;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Properties</title>
+</head>
+<body>
+	<h1>Object Properties</h1>
+	<p id="output"></p>
+
+	<script>
+		// Define objects with symbol values
+		const BankCustomer = {
+			name: 'Bank Customer',
+			symbol: Symbol('bank-customer')
+		};
+
+		const ClinicEmployee = {
+			name: 'Clinic Employee',
+			symbol: Symbol('clinic-employee')
+		};
+
+		const RussianFederationCitizen = {
+			name: 'Russian Federation Citizen',
+			symbol: Symbol('russian-federation-citizen')
+		};
+
+		// Display object properties on screen
+		document.getElementById('output').innerHTML = `
+			<strong>${BankCustomer.name}:</strong><br>
+			Symbol value: ${BankCustomer.symbol.toString()}<br><br>
+
+			<strong>${ClinicEmployee.name}:</strong><br>
+			Symbol value: ${ClinicEmployee.symbol.toString()}<br><br>
+
+			<strong>${RussianFederationCitizen.name}:</strong><br>
+			Symbol value: ${RussianFederationCitizen.symbol.toString()}<br><br>
+		`;
+	</script>
+</body>
+</html>
